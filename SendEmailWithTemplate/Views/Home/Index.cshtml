@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Demo send email with template in ASP.NET";
+}
+
+@if (Session["message"] != null)
+{
+    <div class="alert alert-danger">@Session["message"]</div>
+    Session["message"] = null;
+}
+
+<form method="post" action="" id="form-send-email">
+    <h1>Demo send Email with Template in .NET</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <b>Email:</b>
+        </div>
+        <div class="col-md-8">
+            <input type="email" name="email" id="email" placeholder="Email" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <b>Verify Code:</b>
+        </div>
+        <div class="col-md-8">
+            <input type="text" name="code" id="code" placeholder="Verify code" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <b>Message:</b>
+        </div>
+        <div class="col-md-8">
+            <textarea name="message" id="message" placeholder="Message" class="form-control" required>
+
+            </textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            
+        </div>
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-primary">Gửi Email</button>
+        </div>
+    </div>
+</form>
+<style>
+    #form-send-email{
+        margin: 20px;
+        padding: 10px;
+    }
+    .row{
+        margin-bottom: 10px;
+    }
+</style>
